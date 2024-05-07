@@ -1,0 +1,16 @@
+/**
+ * 
+ */
+package br.gbaeta.com.application;
+
+/**
+ * @author GuilhermeBaeta
+ */
+public class Program {
+
+	public static void main(String[] args) {
+		 System.out.println("Xadrez");
+
+	}
+
+}
