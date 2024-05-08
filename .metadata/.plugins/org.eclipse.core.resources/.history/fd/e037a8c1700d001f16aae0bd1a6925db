@@ -4,9 +4,6 @@
 package br.gbaeta.com.chess;
 
 import br.gbaeta.com.boardgame.Board;
-import br.gbaeta.com.boardgame.Position;
-import br.gbaeta.com.chess.pieces.King;
-import br.gbaeta.com.chess.pieces.Rook;
 
 /**
  * @author GuilhermeBaeta
@@ -17,7 +14,6 @@ public class ChessMatch {
 	
 	public ChessMatch() {
 		board = new Board(8, 8);
-		initialSetup();
 	}
 	
 	public ChessPiece[][] getPieces(){
@@ -28,11 +24,5 @@ public class ChessMatch {
 			}
 		}
 		return mat;
-	}
-	
-	private void initialSetup() {
-		board.placePiece(new Rook(board, Color.WHITE), new Position(2, 1));
-		board.placePiece(new King(board, Color.BLACK), new Position(0, 4));
-		board.placePiece(new King(board, Color.WHITE), new Position(7, 4));
 	}
 }

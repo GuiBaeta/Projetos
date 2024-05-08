@@ -1,0 +1,18 @@
+package br.gbaeta.com.chess.pieces;
+
+import br.gbaeta.com.boardgame.Board;
+import br.gbaeta.com.chess.ChessPiece;
+import br.gbaeta.com.chess.Color;
+
+public class king extends ChessPiece {
+
+	public king(Board board, Color color) {
+		super(board, color);
+	}
+	
+	@Override
+	public String toString() {
+		return "K";
+	}
+
+}

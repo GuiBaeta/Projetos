@@ -1,0 +1,8 @@
+package br.gbaeta.com.chess.pieces;
+
+/**
+ *@author GuilhermeBaeta
+ */
+public class Rook {
+
+}

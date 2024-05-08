@@ -1,0 +1,5 @@
+package br.gbaeta.com.chess.pieces;
+
+public class king {
+
+}

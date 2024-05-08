@@ -1,0 +1,20 @@
+package br.gbaeta.com.chess.pieces;
+
+import br.gbaeta.com.boardgame.Board;
+import br.gbaeta.com.chess.ChessPiece;
+import br.gbaeta.com.chess.Color;
+
+/**
+ *@author GuilhermeBaeta
+ */
+public class Rook  extends ChessPiece{
+
+	public Rook(Board board, Color color) {
+		super(board, color);
+	}
+
+	@Override
+	public string ToString() {
+		return "R";
+	}
+}
