@@ -1,6 +1,7 @@
 package br.gbaeta.com.application;
 
 import br.gbaeta.com.boardgame.Board;
+import br.gbaeta.com.boardgame.Position;
 
 /**
  * @author GuilhermeBaeta

@@ -1,0 +1,13 @@
+/**
+ * 
+ */
+package br.gbaeta.com.boardgame;
+
+/**
+ * @author GuilhermeBaeta
+ */
+public class Piece {
+
+	protected Position position;
+	
+}

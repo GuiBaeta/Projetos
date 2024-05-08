@@ -1,0 +1,8 @@
+package br.gbaeta.com.boardgame;
+
+/**
+ * @author GuilhermeBaeta
+ */
+public class Board {
+
+}
