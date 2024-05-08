@@ -1,0 +1,22 @@
+/**
+ * 
+ */
+package br.gbaeta.com.chess;
+
+import br.gbaeta.com.boardgame.Board;
+
+/**
+ * @author GuilhermeBaeta
+ */
+public class ChessMatch {
+
+	private Board board;
+	
+	public ChessMatch() {
+		board = new Board(8, 8);
+	}
+	
+	public ChessPiece[][] getPieces(){
+		
+	}
+}
