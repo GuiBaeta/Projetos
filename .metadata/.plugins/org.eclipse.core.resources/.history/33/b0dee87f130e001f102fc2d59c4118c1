@@ -1,0 +1,8 @@
+package br.gbaeta.com.chess;
+
+/**
+ *@author GuilhermeBaeta
+ */
+public class ChessException {
+
+}
