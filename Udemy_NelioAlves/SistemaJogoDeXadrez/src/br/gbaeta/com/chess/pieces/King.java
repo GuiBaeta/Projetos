@@ -4,6 +4,9 @@ import br.gbaeta.com.boardgame.Board;
 import br.gbaeta.com.chess.ChessPiece;
 import br.gbaeta.com.chess.Color;
 
+/**
+ *@author GuilhermeBaeta
+ */
 public class King extends ChessPiece {
 
 	public King(Board board, Color color) {
