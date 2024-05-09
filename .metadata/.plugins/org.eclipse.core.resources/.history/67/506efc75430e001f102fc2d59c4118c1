@@ -1,7 +1,5 @@
 package br.gbaeta.com.chess;
 
-import br.gbaeta.com.boardgame.BoardException;
-
 /**
  *@author GuilhermeBaeta
  */

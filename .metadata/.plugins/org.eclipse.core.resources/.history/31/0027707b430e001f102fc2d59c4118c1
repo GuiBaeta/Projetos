@@ -2,9 +2,6 @@ package br.gbaeta.com.chess;
 
 import br.gbaeta.com.boardgame.Position;
 
-/**
- *@author GuilhermeBaeta
- */
 public class ChessPosition {
 
 	private char column;
