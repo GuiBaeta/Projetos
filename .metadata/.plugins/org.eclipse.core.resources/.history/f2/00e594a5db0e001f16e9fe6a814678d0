@@ -2,7 +2,6 @@ package br.gbaeta.com.chess;
 
 import br.gbaeta.com.boardgame.Board;
 import br.gbaeta.com.boardgame.Piece;
-import br.gbaeta.com.boardgame.Position;
 
 /**
  * @author GuilhermeBaeta
@@ -18,11 +17,6 @@ public abstract class ChessPiece extends Piece {
 
 	public Color getColor() {
 		return color;
-	}
-	
-	protected boolean isThereOpponentPiece(Position position) {
-		ChessPiece p = (ChessPiece)getBoard().piece(position);
-		return p != null && p.getColor() != color;
 	}
 
 }
