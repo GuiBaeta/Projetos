@@ -2,7 +2,12 @@
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="br.gbaeta.com.boardgame.Board"/>
     <fullyQualifiedTypeName name="br.gbaeta.com.chess.ChessMatch"/>
-    <fullyQualifiedTypeName name="br.gbaeta.com.chess.ChessPiece"/>
-    <fullyQualifiedTypeName name="java.lang.Override"/>
+    <fullyQualifiedTypeName name="br.gbaeta.com.boardgame.BoardException"/>
     <fullyQualifiedTypeName name="br.gbaeta.com.boardgame.Position"/>
+    <fullyQualifiedTypeName name="java.lang.Override"/>
+    <fullyQualifiedTypeName name="java.lang.RuntimeException"/>
+    <fullyQualifiedTypeName name="java.util.InputMismatchException"/>
+    <fullyQualifiedTypeName name="br.gbaeta.com.chess.ChessException"/>
+    <fullyQualifiedTypeName name="br.gbaeta.com.chess.ChessPosition"/>
+    <fullyQualifiedTypeName name="br.gbaeta.com.chess.ChessPiece"/>
 </qualifiedTypeNameHistroy>

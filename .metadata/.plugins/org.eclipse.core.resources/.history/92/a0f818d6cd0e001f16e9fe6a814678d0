@@ -6,7 +6,7 @@ import br.gbaeta.com.boardgame.Piece;
 /**
  * @author GuilhermeBaeta
  */
-public abstract class ChessPiece extends Piece {
+public class ChessPiece extends Piece {
 	
 	private Color color;
 
