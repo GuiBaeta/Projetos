@@ -1,6 +1,0 @@
-package br.gbaeta.com.chess;
-
-public enum Color {
-	BLACK,
-	WHITE;
-}
