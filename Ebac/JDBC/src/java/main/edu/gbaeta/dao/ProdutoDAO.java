@@ -1,6 +1,3 @@
-/**
- * 
- */
 package edu.gbaeta.dao;
 
 import java.sql.Connection;
@@ -10,23 +7,25 @@ import java.util.ArrayList;
 import java.util.List;
 
 import edu.gbaeta.dao.jdbc.ConnectionFactory;
-import edu.gbaeta.domain.Cliente;
+import edu.gbaeta.domain.Produto;
 
 /**
  * @author GuilhermeBaeta
  */
-public class ClienteDAO implements IClienteDAO {
+public class ProdutoDAO implements IProdutoDAO{
 
 	@Override
-	public Integer cadastrar(Cliente cliente) throws Exception {
+	public Integer cadastrar(Produto produto) throws Exception {
 		Connection connection = null;
 		PreparedStatement stm = null;
 		try {
 			connection = ConnectionFactory.getConnection();
-			String sql = "INSERT INTO TB_CLIENTE_2 (ID, CODIGO, NOME) VALUES (nextval('SQ_CLIENTE_2'),?,?)";
+			String sql = "INSERT INTO TB_produto (ID, NOME, CODIGO, DESCRICAO, PRECO) VALUES (nextval('sq_produto'),?,?,?,?)";
 			stm = connection.prepareStatement(sql);
-			stm.setString(1, cliente.getCodigo());
-			stm.setString(2, cliente.getNome());
+			stm.setString(1, produto.getNome());
+			stm.setString(2, produto.getCodigo());
+			stm.setString(3, produto.getDescricao());
+			stm.setBigDecimal(4, produto.getValor());
 			return stm.executeUpdate();
 		} catch(Exception e) {
 			throw e;
@@ -41,24 +40,26 @@ public class ClienteDAO implements IClienteDAO {
 	}
 
 	@Override
-	public Cliente consultar(String codigo) throws Exception {
+	public Produto consultar(String codigo) throws Exception {
 		Connection connection = null;
 		PreparedStatement stm = null;
 		ResultSet rs = null;
-		Cliente cliente = null;
+		Produto produto = null;
 		try {
 			connection = ConnectionFactory.getConnection();
-			String sql = "select *  from tb_cliente_2 where codigo = ?";
+			String sql = "select * from TB_produto where codigo = ?";
 			stm = connection.prepareStatement(sql);
 			stm.setString(1, codigo);
 			rs = stm.executeQuery();
 			if  (rs.next()) {
-				cliente = new Cliente();
-				cliente.setId(rs.getLong("id"));
-				cliente.setCodigo(rs.getString("codigo"));
-				cliente.setNome(rs.getString("nome"));
+				produto = new Produto();
+				produto.setId(rs.getLong("id"));
+				produto.setCodigo(rs.getString("codigo"));
+				produto.setNome(rs.getString("nome"));
+				produto.setDescricao(rs.getString("descricao"));
+				produto.setValor(rs.getBigDecimal("preco"));
 			}
-			return cliente;
+			return produto;
 		} catch(Exception e) {
 			throw e;
 		} finally {
@@ -72,14 +73,14 @@ public class ClienteDAO implements IClienteDAO {
 	}
 
 	@Override
-	public Integer excluir(Cliente cliente) throws Exception {
+	public Integer excluir(Produto produto) throws Exception {
 		Connection connection = null;
 		PreparedStatement stm = null;
 		try {
 			connection = ConnectionFactory.getConnection();
-			String sql = "DELETE FROM TB_CLIENTE_2 WHERE CODIGO = ?";
+			String sql = "DELETE FROM tb_Produto WHERE CODIGO = ?";
 			stm = connection.prepareStatement(sql);
-			stm.setString(1, cliente.getCodigo());
+			stm.setString(1, produto.getCodigo());
 			return stm.executeUpdate();
 		} catch(Exception e) {
 			throw e;
@@ -94,26 +95,27 @@ public class ClienteDAO implements IClienteDAO {
 	}
 
 	@Override
-	public List<Cliente> consultarTodos() throws Exception {
+	public List<Produto> consultarTodos() throws Exception {
 		Connection connection = null;
 		PreparedStatement stm = null;
 		ResultSet rs = null;
-        List<Cliente> clientes = new ArrayList<>();
+        List<Produto> produtos = new ArrayList<>();
 		try {
 			connection = ConnectionFactory.getConnection();
-			String sql = "select * from tb_cliente_2;";
+			String sql = "select * from tb_produto;";
 			stm = connection.prepareStatement(sql);
 			rs = stm.executeQuery();
 			
 			while (rs.next()) {
-				Cliente  cliente =  new Cliente();
-				cliente.setId(rs.getLong("id"));
-				cliente.setCodigo(rs.getString("codigo"));
-				cliente.setNome(rs.getString("nome"));
-				clientes.add(cliente);
+				Produto produto =  new Produto();
+				produto.setId(rs.getLong("id"));
+				produto.setCodigo(rs.getString("codigo"));
+				produto.setNome(rs.getString("nome"));
+				produto.setDescricao(rs.getString("descricao"));
+				produto.setValor(rs.getBigDecimal("preco"));
+				produtos.add(produto);
 			}
-			
-			return clientes;
+			return produtos;
 		} catch(Exception e) {
 			throw e;
 		} finally {
@@ -127,15 +129,17 @@ public class ClienteDAO implements IClienteDAO {
 	}
 
 	@Override
-	public Integer atualizar(Cliente cliente) throws Exception {
+	public Integer atualizar(Produto produto) throws Exception {
 		Connection connection = null;
 		PreparedStatement stm = null;
 		try {
 			connection = ConnectionFactory.getConnection();
-			String sql = "UPDATE tb_cliente_2 SET nome = ? WHERE codigo = ?";
+			String sql = "UPDATE tb_produto SET nome = ?, descricao = ?, preco = ? WHERE codigo = ?";
 			stm = connection.prepareStatement(sql);
-			stm.setString(1, cliente.getNome());
-			stm.setString(2, cliente.getCodigo());
+			stm.setString(1, produto.getNome());
+			stm.setString(2, produto.getDescricao());
+			stm.setBigDecimal(3, produto.getValor());
+			stm.setString(4, produto.getCodigo());
 			return stm.executeUpdate();
 		} catch(Exception e) {
 			throw e;
@@ -148,5 +152,6 @@ public class ClienteDAO implements IClienteDAO {
 			}
 		}
 	}
+
 
 }

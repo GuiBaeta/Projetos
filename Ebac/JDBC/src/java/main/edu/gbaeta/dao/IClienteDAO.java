@@ -3,6 +3,8 @@
  */
 package edu.gbaeta.dao;
 
+import java.util.List;
+
 import edu.gbaeta.domain.Cliente;
 
 /**
@@ -14,7 +16,11 @@ public interface IClienteDAO {
 
 	public Cliente consultar(String codigo) throws Exception;
 
-	public Integer excluir(Cliente clienteBD) throws Exception;
-	
+	public Integer excluir(Cliente cliente) throws Exception;
+
+	List<Cliente> consultarTodos() throws Exception;
+
+	public Integer atualizar(Cliente cliente) throws Exception;
+
 
 }
