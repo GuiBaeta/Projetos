@@ -9,9 +9,18 @@ classDiagram
         Platform[] platforms
     }
 
+    class Account {
+        Long id
+        String username
+        String email
+    }
+
     class Game {
         String name
         String genre
+        Date releaseDate
+        String developer
+        String description
         Float progress
     }
 
@@ -20,7 +29,8 @@ classDiagram
         String url
     }
 
-    User --> "1" Account : has
-    User --> "N" Game : owns
-    User --> "N" Platform : subscribes
+    User "1" *-- "1" Account
+    User "1" *-- "N" Game
+    User "1" *-- "N" Platform : subscribes
+
 ```
