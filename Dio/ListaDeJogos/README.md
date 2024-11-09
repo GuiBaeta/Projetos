@@ -10,7 +10,6 @@ classDiagram
     }
 
     class Account {
-        Long id
         String username
         String email
     }
