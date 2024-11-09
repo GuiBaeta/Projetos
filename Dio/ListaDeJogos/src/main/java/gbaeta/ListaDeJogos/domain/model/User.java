@@ -21,7 +21,6 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@OneToOne(cascade = CascadeType.ALL)
 	private String name;
 	
 	@OneToOne(cascade = CascadeType.ALL)

@@ -1,7 +1,5 @@
 package gbaeta.ListaDeJogos.domain.model;
 
-import org.h2.store.Data;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -11,7 +9,7 @@ import jakarta.persistence.Id;
  * @author GuilhermeBaeta
  */
 
-@Entity(name = "tb_platform")
+@Entity(name = "tb_game")
 public class Game {
 
 	@Id
@@ -24,8 +22,8 @@ public class Game {
 	@Column(name = "genre", nullable = false, length = 50)
 	private String genre;
 	
-	@Column(name = "release_date")
-	private Data releaseDate;
+	@Column(name = "release_date", length = 10)
+	private String releaseDate;
 	
 	@Column(name = "developer", length = 100)
 	private String developer;
@@ -54,10 +52,10 @@ public class Game {
 	public void setGenre(String genre) {
 		this.genre = genre;
 	}
-	public Data getReleaseDate() {
+	public String getReleaseDate() {
 		return releaseDate;
 	}
-	public void setReleaseDate(Data releaseDate) {
+	public void setReleaseDate(String releaseDate) {
 		this.releaseDate = releaseDate;
 	}
 	public String getDeveloper() {
