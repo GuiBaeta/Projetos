@@ -8,5 +8,6 @@ import gbaeta.ListaDeJogos.domain.model.User;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
 
+	boolean existsByAccountUsername(String accountUsername);
 
 }
